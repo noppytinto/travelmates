@@ -59,7 +59,7 @@ export default function Home() {
         <div className="flex items-center justify-center gap-2">
           <input
             type="text"
-            placeholder="search contry"
+            placeholder="search country"
             className="rounded-md border-2 border-solid"
             ref={inputRef}
           />
@@ -75,8 +75,8 @@ export default function Home() {
       <div>
         <ul className={styles.countriesGrid}>
           {countries.map((c: Country) => (
-            <li key={c.name} className={styles.countriesGridItem}>
-              <figure className="flex flex-col items-center justify-between">
+            <li key={c.name} className={styles.countriesGridListItem}>
+              <article className={styles.countriesGridItem}>
                 <Image
                   src={c.flag}
                   alt={`flag of ${c.name}`}
@@ -85,11 +85,12 @@ export default function Home() {
                   height={0}
                   className={styles.countriesGridItemImage}
                 />
-                <figcaption className="text-center">
-                  <p>{`${c.name}`}</p>
-                  <p className="text-neutral-400">{`(${c.officialName})`}</p>
-                </figcaption>
-              </figure>
+                <div className={styles.countriesGridItemDetailsContainer}>
+                  <div className={styles.countriesGridItemDetails}>
+                    <p className={styles.countriesGridItemTitle}>{c.name}</p>
+                  </div>
+                </div>
+              </article>
             </li>
           ))}
         </ul>
