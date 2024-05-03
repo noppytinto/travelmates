@@ -54,11 +54,11 @@ const Map: React.FC = () => {
 
   return (
     <div>
-      <h1>Map</h1>
-      <form>
-        <input type="text" ref={inputRef} size={50} />
-        <button type="button">Search</button>
-      </form>
+      {/*<h1>Map</h1>*/}
+      {/*<form>*/}
+      {/*  <input type="text" ref={inputRef} size={50} />*/}
+      {/*  <button type="button">Search</button>*/}
+      {/*</form>*/}
     </div>
   );
 };
