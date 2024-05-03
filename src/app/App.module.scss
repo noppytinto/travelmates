@@ -1,9 +1,3 @@
-@mixin flex-row--center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .countriesGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -16,47 +10,11 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
     overflow: hidden;
+    height: 180px;
 
     &:hover {
       transform: scale(1.05);
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
     }
-  }
-
-  &Item {
-    height: 100%;
-  }
-
-  &ItemImage {
-    display: block;
-    width: auto;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  &ItemDetailsContainer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 10px;
-
-    @include flex-row--center;
-  }
-
-  &ItemDetails {
-    padding: 5px 10px;
-
-    // blur effect
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(5px);
-    border-radius: 10px;
-    width: fit-content;
-  }
-
-  &ItemTitle {
-    font-weight: bold;
-    text-align: center;
-    font-size: 1.2rem;
   }
 }

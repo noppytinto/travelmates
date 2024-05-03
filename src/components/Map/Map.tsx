@@ -1,13 +1,13 @@
 "use client";
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Loader } from "@googlemaps/js-api-loader";
-import PlacesLibrary = google.maps.PlacesLibrary;
-import Autocomplete = google.maps.places.Autocomplete;
+// import { Loader } from "@googlemaps/js-api-loader";
+// import PlacesLibrary = google.maps.PlacesLibrary;
+// import Autocomplete = google.maps.places.Autocomplete;
 
 const Map: React.FC = () => {
-  const [placeLibrary, setPlaceLibrary] = useState<PlacesLibrary | null>(null);
-  const [autocomplete, setAutocomplete] = useState<Autocomplete | null>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
+  // const [placeLibrary, setPlaceLibrary] = useState<PlacesLibrary | null>(null);
+  // const [autocomplete, setAutocomplete] = useState<Autocomplete | null>(null);
+  // const inputRef = useRef<HTMLInputElement>(null);
 
   // useEffect(() => {
   //   (async () => {

@@ -1,0 +1,42 @@
+@mixin flex-row--center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flag {
+  height: 100%;
+
+  &Image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &DetailsContainer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+
+    @include flex-row--center;
+  }
+
+  &Details {
+    padding: 5px 10px;
+
+    // blur effect
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    width: fit-content;
+  }
+
+  &Title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}

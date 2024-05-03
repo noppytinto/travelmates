@@ -1,9 +1,9 @@
 "use client";
 
 import { Country, parseCountry } from "@/entities/country/country";
-import Image from "next/image";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import styles from "./App.module.scss";
+import Flag from "@/components/FlagImage/Flag";
 
 export default function Home() {
   const [query, setQuery] = useState("");
@@ -76,21 +76,7 @@ export default function Home() {
         <ul className={styles.countriesGrid}>
           {countries.map((c: Country) => (
             <li key={c.name} className={styles.countriesGridListItem}>
-              <article className={styles.countriesGridItem}>
-                <Image
-                  src={c.flag}
-                  alt={`flag of ${c.name}`}
-                  title={`flag of ${c.name}`}
-                  width={0}
-                  height={0}
-                  className={styles.countriesGridItemImage}
-                />
-                <div className={styles.countriesGridItemDetailsContainer}>
-                  <div className={styles.countriesGridItemDetails}>
-                    <p className={styles.countriesGridItemTitle}>{c.name}</p>
-                  </div>
-                </div>
-              </article>
+              <Flag src={c.flag} name={c.name} alt={c.name} />
             </li>
           ))}
         </ul>

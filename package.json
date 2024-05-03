@@ -11,6 +11,7 @@
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.16.6",
     "@next/third-parties": "^14.2.3",
+    "fast-average-color": "^9.4.0",
     "next": "^14.2.3",
     "react": "^18",
     "react-dom": "^18"
