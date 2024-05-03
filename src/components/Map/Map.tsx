@@ -9,48 +9,48 @@ const Map: React.FC = () => {
   const [autocomplete, setAutocomplete] = useState<Autocomplete | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    (async () => {
-      if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
-        console.error("fffffffffffffffffffffff Google Maps API key not found");
-        return;
-      }
-
-      const loader = new Loader({
-        apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-        version: "weekly",
-      });
-
-      loader.importLibrary("places").then(async () => {
-        const lib = await loader.importLibrary("places");
-        setPlaceLibrary(lib);
-
-        if (!inputRef.current) {
-          console.error("fffffffffffffffffffffff input not found");
-          return;
-        }
-
-        const autocomplete = new google.maps.places.Autocomplete(
-          inputRef.current,
-        );
-
-        autocomplete.addListener("place_changed", () => {
-          const place = autocomplete.getPlace();
-          console.log(
-            "fffffffffffffffffffffffffffffffffffffffffff place:",
-            place,
-          );
-        });
-
-        console.log(
-          "fffffffffffffffffffffffffffffffffffffffffff autocomplete:",
-          autocomplete,
-        );
-
-        setAutocomplete(autocomplete);
-      });
-    })();
-  }, [inputRef]);
+  // useEffect(() => {
+  //   (async () => {
+  //     if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
+  //       console.error("fffffffffffffffffffffff Google Maps API key not found");
+  //       return;
+  //     }
+  //
+  //     const loader = new Loader({
+  //       apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+  //       version: "weekly",
+  //     });
+  //
+  //     loader.importLibrary("places").then(async () => {
+  //       const lib = await loader.importLibrary("places");
+  //       setPlaceLibrary(lib);
+  //
+  //       if (!inputRef.current) {
+  //         console.error("fffffffffffffffffffffff input not found");
+  //         return;
+  //       }
+  //
+  //       const autocomplete = new google.maps.places.Autocomplete(
+  //         inputRef.current,
+  //       );
+  //
+  //       autocomplete.addListener("place_changed", () => {
+  //         const place = autocomplete.getPlace();
+  //         console.log(
+  //           "fffffffffffffffffffffffffffffffffffffffffff place:",
+  //           place,
+  //         );
+  //       });
+  //
+  //       console.log(
+  //         "fffffffffffffffffffffffffffffffffffffffffff autocomplete:",
+  //         autocomplete,
+  //       );
+  //
+  //       setAutocomplete(autocomplete);
+  //     });
+  //   })();
+  // }, [inputRef]);
 
   return (
     <div>
