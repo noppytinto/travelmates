@@ -53,7 +53,14 @@ export default function TimelineItem({
       {/***********************+ HEADER **************************/}
       <div className={styles.timelineItem__header}>
         <div className={styles.timelineItem__icon}>
-          <FontAwesomeIcon icon={faClock} size={"lg"} />
+          <FontAwesomeIcon
+            icon={faClock}
+            size={"lg"}
+            fixedWidth
+            style={{
+              display: "block",
+            }}
+          />
         </div>
         <h1 className={styles.timelineItem__title}>{title}</h1>
 
@@ -63,7 +70,9 @@ export default function TimelineItem({
             size={"lg"}
             style={{
               color: "#d1d1d1",
+              display: "block",
             }}
+            fixedWidth
           />
         )}
       </div>
