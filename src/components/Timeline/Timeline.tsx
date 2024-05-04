@@ -3,7 +3,7 @@ import styles from "./Timeline.module.scss";
 
 type TimelineItem = {
   title: string;
-  description: string;
+  description?: string;
 };
 
 export default function Timeline() {
@@ -11,23 +11,18 @@ export default function Timeline() {
     {
       title: "Get to the airport",
       description:
-        " lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae nunc" +
-        " consectetur adipiscing elit. Donec nec odio vitae nunc consectetur " +
-        "adipiscing elit. Donec nec odio vitae nunc consectetur adipiscing elit. Donec nec odio vitae nunc",
+        " Ticket, passport, and luggage. Don't forget to pack your toothbrush!",
     },
     {
       title: "Get on the plane",
-      description:
-        " lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae nunc" +
-        " consectetur adipiscing elit. Donec nec odio vitae nunc consectetur " +
-        "adipiscing elit. Donec nec odio vitae nunc consectetur adipiscing elit. Donec nec odio vitae nunc",
     },
     {
       title: "Arrive at destination",
+    },
+    {
+      title: "Get to the hotel",
       description:
-        " lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae nunc" +
-        " consectetur adipiscing elit. Donec nec odio vitae nunc consectetur " +
-        "adipiscing elit. Donec nec odio vitae nunc consectetur adipiscing elit. Donec nec odio vitae nunc",
+        "Check in, unpack, and relax. You've earned it after that long flight!",
     },
   ];
   return (

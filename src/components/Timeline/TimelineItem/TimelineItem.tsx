@@ -1,14 +1,8 @@
 "use client";
 
-import {
-  useState,
-  useLayoutEffect,
-  useRef,
-  useEffect,
-  PropsWithChildren,
-} from "react";
+import { useState, PropsWithChildren } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock } from "@fortawesome/free-solid-svg-icons";
+import { faClock, faFileLines } from "@fortawesome/free-solid-svg-icons";
 import Card from "@/components/ui/Card/Card";
 import styles from "./TimelineItem.module.scss";
 // import { useGSAP } from "@gsap/react";
@@ -16,7 +10,7 @@ import styles from "./TimelineItem.module.scss";
 
 type Props = {
   title: string;
-  description: string;
+  description?: string;
 };
 
 export default function TimelineItem({
@@ -66,10 +60,20 @@ export default function TimelineItem({
             <FontAwesomeIcon icon={faClock} size={"lg"} />
           </div>
           <h1 className={styles.timelineItem__title}>{title}</h1>
+
+          {description && (
+            <FontAwesomeIcon
+              icon={faFileLines}
+              size={"lg"}
+              style={{
+                color: "#d1d1d1",
+              }}
+            />
+          )}
         </div>
 
         {/***********************+ DESCRIPTION *********************/}
-        <div className={descriptionClasses}>{description}</div>
+        {description && <div className={descriptionClasses}>{description}</div>}
       </Card>
     </div>
   );
