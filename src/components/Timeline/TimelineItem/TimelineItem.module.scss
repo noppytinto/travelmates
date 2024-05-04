@@ -37,21 +37,21 @@
   }
 
   &__title {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     margin-bottom: 5px;
   }
 
   &__description {
+    margin-top: 10px;
     //transition: all 0.2s ease-out;
 
     &Collapsed {
-      max-height: 0;
-      overflow: hidden;
+      display: none;
     }
 
     &Expanded {
-      max-height: 1000px;
+      display: revert;
     }
   }
 }

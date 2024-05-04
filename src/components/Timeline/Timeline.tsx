@@ -9,21 +9,21 @@ type TimelineItem = {
 export default function Timeline() {
   const timelineItems: TimelineItem[] = [
     {
-      title: "Title 1",
+      title: "Get to the airport",
       description:
         " lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae nunc" +
         " consectetur adipiscing elit. Donec nec odio vitae nunc consectetur " +
         "adipiscing elit. Donec nec odio vitae nunc consectetur adipiscing elit. Donec nec odio vitae nunc",
     },
     {
-      title: "Title 2",
+      title: "Get on the plane",
       description:
         " lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae nunc" +
         " consectetur adipiscing elit. Donec nec odio vitae nunc consectetur " +
         "adipiscing elit. Donec nec odio vitae nunc consectetur adipiscing elit. Donec nec odio vitae nunc",
     },
     {
-      title: "Title 3",
+      title: "Arrive at destination",
       description:
         " lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae nunc" +
         " consectetur adipiscing elit. Donec nec odio vitae nunc consectetur " +
