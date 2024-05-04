@@ -7,13 +7,26 @@
 .timelineItem {
   border-left: 3px solid #abdbff;
   padding: 25px 10px;
-  position: relative;
 
-  &__iconContainer {
+  &__content {
+    margin-left: 15px;
+    padding: 15px 15px;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  &__header {
+    position: relative;
+  }
+
+  &__icon {
     height: 40px;
     width: 40px;
     position: absolute;
     top: 50%;
+    left: -30px;
 
     @include flex-row-center;
 
@@ -23,22 +36,14 @@
     color: #fff;
   }
 
-  &__content {
-    margin-left: 15px;
-
-    :hover {
-      cursor: pointer;
-    }
-  }
-
   &__title {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 5px;
   }
 
   &__description {
-    transition: all 0.2s ease-out;
+    //transition: all 0.2s ease-out;
 
     &Collapsed {
       max-height: 0;
