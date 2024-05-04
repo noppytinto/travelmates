@@ -24,6 +24,28 @@ export default function Timeline() {
       description:
         "Check in, unpack, and relax. You've earned it after that long flight!",
     },
+    {
+      title: "Explore the city",
+    },
+    {
+      title: "Get to the airport",
+      description:
+        " Ticket, passport, and luggage. Don't forget to pack your toothbrush!",
+    },
+    {
+      title: "Get on the plane",
+    },
+    {
+      title: "Arrive at destination",
+    },
+    {
+      title: "Get to the hotel",
+      description:
+        "Check in, unpack, and relax. You've earned it after that long flight!",
+    },
+    {
+      title: "Explore the city",
+    },
   ];
   return (
     <div className={styles["timeline"]}>

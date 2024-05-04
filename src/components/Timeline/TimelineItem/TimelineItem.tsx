@@ -49,32 +49,27 @@ export default function TimelineItem({
   // );
 
   return (
-    <div className={styles.timelineItem}>
-      <Card
-        className={styles.timelineItem__content}
-        onClick={expandDescription}
-      >
-        {/***********************+ HEADER **************************/}
-        <div className={styles.timelineItem__header}>
-          <div className={styles.timelineItem__icon}>
-            <FontAwesomeIcon icon={faClock} size={"lg"} />
-          </div>
-          <h1 className={styles.timelineItem__title}>{title}</h1>
-
-          {description && (
-            <FontAwesomeIcon
-              icon={faFileLines}
-              size={"lg"}
-              style={{
-                color: "#d1d1d1",
-              }}
-            />
-          )}
+    <div className={styles.timelineItem} onClick={expandDescription}>
+      {/***********************+ HEADER **************************/}
+      <div className={styles.timelineItem__header}>
+        <div className={styles.timelineItem__icon}>
+          <FontAwesomeIcon icon={faClock} size={"lg"} />
         </div>
+        <h1 className={styles.timelineItem__title}>{title}</h1>
 
-        {/***********************+ DESCRIPTION *********************/}
-        {description && <div className={descriptionClasses}>{description}</div>}
-      </Card>
+        {description && (
+          <FontAwesomeIcon
+            icon={faFileLines}
+            size={"lg"}
+            style={{
+              color: "#d1d1d1",
+            }}
+          />
+        )}
+      </div>
+
+      {/***********************+ DESCRIPTION *********************/}
+      {description && <Card className={descriptionClasses}>{description}</Card>}
     </div>
   );
 }

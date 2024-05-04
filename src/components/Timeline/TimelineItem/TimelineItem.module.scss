@@ -12,17 +12,11 @@
 
 .timelineItem {
   border-left: 3px solid #abdbff;
-  padding: 25px 10px;
+  padding: 25px 10px 25px 30px;
 
-  &__content {
-    margin-left: 15px;
-    padding: 15px;
-    transition: all 0.1s ease-out;
-
-    &:hover {
-      cursor: pointer;
-      box-shadow: 2px 2px 12px -2px rgb(0 0 0 / 50%);
-    }
+  &:hover {
+    cursor: pointer;
+    //box-shadow: 2px 2px 12px -2px rgb(0 0 0 / 50%);
   }
 
   &__header {
@@ -32,11 +26,12 @@
   }
 
   &__icon {
-    height: 40px;
-    width: 40px;
+    $size: 35px;
+    height: $size;
+    width: $size;
     position: absolute;
     top: 50%;
-    left: -30px;
+    left: -20px;
 
     @include flex-row-center;
 
@@ -49,11 +44,11 @@
   &__title {
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 5px;
   }
 
   &__description {
     margin-top: 10px;
+    padding: 20px 10px 20px 15px;
 
     // transition: all 0.2s ease-out;
 
