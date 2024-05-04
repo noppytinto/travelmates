@@ -11,9 +11,11 @@
   &__content {
     margin-left: 15px;
     padding: 15px 15px;
+    transition: all 0.1s ease-out;
 
-    :hover {
+    &:hover {
       cursor: pointer;
+      box-shadow: 2px 2px 12px -2px rgb(0 0 0 / 50%);
     }
   }
 
@@ -44,7 +46,7 @@
 
   &__description {
     margin-top: 10px;
-    //transition: all 0.2s ease-out;
+    // transition: all 0.2s ease-out;
 
     &Collapsed {
       display: none;
