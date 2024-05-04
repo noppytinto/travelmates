@@ -16,6 +16,7 @@
 
   &:hover {
     cursor: pointer;
+
     //box-shadow: 2px 2px 12px -2px rgb(0 0 0 / 50%);
   }
 
@@ -27,6 +28,7 @@
 
   &__icon {
     $size: 35px;
+
     height: $size;
     width: $size;
     position: absolute;
