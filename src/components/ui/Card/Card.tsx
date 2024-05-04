@@ -3,7 +3,7 @@ import styles from "./Card.module.scss";
 
 type Props = {
   className?: string;
-  onClick?: () => void;
+  onClick?: (e: React.SyntheticEvent) => void;
 };
 
 export default function Card({

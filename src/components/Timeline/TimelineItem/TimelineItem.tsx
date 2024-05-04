@@ -80,7 +80,14 @@ export default function TimelineItem({
       </div>
 
       {/***********************+ DESCRIPTION *********************/}
-      {description && <Card className={descriptionClasses}>{description}</Card>}
+      {description && (
+        <Card
+          className={descriptionClasses}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {description}
+        </Card>
+      )}
     </div>
   );
 }
