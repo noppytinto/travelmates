@@ -1,0 +1,52 @@
+@mixin flex-row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timelineItem {
+  border-left: 3px solid #abdbff;
+  padding: 25px 10px;
+  position: relative;
+
+  &__iconContainer {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 50%;
+
+    @include flex-row-center;
+
+    transform: translateY(-50%) translateX(-80%);
+    background-color: #3aa4ff;
+    border-radius: 50%;
+    color: #fff;
+  }
+
+  &__content {
+    margin-left: 15px;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  &__title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  &__description {
+    transition: all 0.2s ease-out;
+
+    &Collapsed {
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    &Expanded {
+      max-height: 1000px;
+    }
+  }
+}
