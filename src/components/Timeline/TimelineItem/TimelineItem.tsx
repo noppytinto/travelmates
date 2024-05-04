@@ -2,9 +2,11 @@
 
 import { useState, PropsWithChildren } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock, faFileLines } from "@fortawesome/free-solid-svg-icons";
 import Card from "@/components/ui/Card/Card";
 import styles from "./TimelineItem.module.scss";
+import { faFileLines } from "@fortawesome/free-regular-svg-icons";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
+
 // import { useGSAP } from "@gsap/react";
 // import { gsap } from "gsap";
 

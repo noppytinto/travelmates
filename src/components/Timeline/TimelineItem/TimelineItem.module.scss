@@ -11,8 +11,10 @@
 }
 
 .timelineItem {
+  $padding-y: 30px;
+
   border-left: 3px solid #abdbff;
-  padding: 25px 10px 25px 30px;
+  padding: $padding-y 10px $padding-y 30px;
 
   &:hover {
     cursor: pointer;
