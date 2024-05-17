@@ -1,6 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Travelmates
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7e6bae88-4f8f-4d6c-bf83-f4eb9bd6efc3/deploy-status)](https://app.netlify.com/sites/travelmates/deploys)
 
 ## Getting Started
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 
