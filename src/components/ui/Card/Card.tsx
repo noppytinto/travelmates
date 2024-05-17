@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import React, { forwardRef, PropsWithChildren } from "react";
 import styles from "./Card.module.scss";
 
 type Props = {
@@ -6,14 +6,19 @@ type Props = {
   onClick?: (e: React.SyntheticEvent) => void;
 };
 
-export default function Card({
-  children,
-  className,
-  onClick,
-}: PropsWithChildren<Props>) {
+const Card = forwardRef(function Card(
+  { className, onClick, children }: PropsWithChildren<Props>,
+  ref,
+) {
   return (
-    <div className={`${styles.card} ${className}`} onClick={onClick}>
+    <div
+      ref={ref as any}
+      className={`${styles.card} ${className}`}
+      onClick={onClick}
+    >
       {children}
     </div>
   );
-}
+});
+
+export default Card;

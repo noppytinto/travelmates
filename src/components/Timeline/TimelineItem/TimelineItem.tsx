@@ -1,14 +1,13 @@
 "use client";
 
-import { useState, PropsWithChildren } from "react";
+import React, { useState, PropsWithChildren, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "@/components/ui/Card/Card";
 import styles from "./TimelineItem.module.scss";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
-
-// import { useGSAP } from "@gsap/react";
-// import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
 
 type Props = {
   title: string;
@@ -19,39 +18,34 @@ export default function TimelineItem({
   title,
   description,
 }: PropsWithChildren<Props>) {
-  // gsap.registerPlugin(useGSAP);
-
+  const timelineItemEl = useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = useState(false);
-  // const [descriptionClasses, setDescriptionClasses] = useState(
-  //   `${styles.timelineItem__description} ${styles.timelineItem__descriptionCollapsed}`,
-  // );
 
   function expandDescription() {
     setExpanded(!expanded);
   }
 
-  const descriptionClasses = `${styles.timelineItem__description} ${
-    expanded
-      ? styles.timelineItem__descriptionExpanded
-      : styles.timelineItem__descriptionCollapsed
-  }`;
+  useGSAP(
+    () => {
+      if (!timelineItemEl.current) return;
 
-  // const container = useRef(null);
-  // useGSAP(
-  //   () => {
-  //     // create expand/collapse animation
-  //     if (expanded) {
-  //       gsap.to(container.current, {
-  //         height: "auto",
-  //         duration: 0.3,
-  //       });
-  //     }
-  //   },
-  //   { scope: container },
-  // );
+      gsap.to(`.${styles.timelineItem__description}`, {
+        height: expanded ? "auto" : 0,
+        duration: 0.2,
+      });
+    },
+    {
+      scope: timelineItemEl,
+      dependencies: [expanded],
+    },
+  );
 
   return (
-    <div className={styles.timelineItem} onClick={expandDescription}>
+    <div
+      className={styles.timelineItem}
+      onClick={expandDescription}
+      ref={timelineItemEl}
+    >
       {/***********************+ HEADER **************************/}
       <div className={styles.timelineItem__header}>
         <div className={styles.timelineItem__icon}>
@@ -81,11 +75,8 @@ export default function TimelineItem({
 
       {/***********************+ DESCRIPTION *********************/}
       {description && (
-        <Card
-          className={descriptionClasses}
-          onClick={(e) => e.stopPropagation()}
-        >
-          {description}
+        <Card className={styles.timelineItem__description}>
+          <div className="p-4">{description}</div>
         </Card>
       )}
     </div>

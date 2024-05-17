@@ -52,16 +52,8 @@
 
   &__description {
     margin-top: 10px;
-    padding: 20px 10px 20px 15px;
-
-    // transition: all 0.2s ease-out;
-
-    &Collapsed {
-      display: none;
-    }
-
-    &Expanded {
-      display: revert;
-    }
+    overflow: hidden;
+    padding: 0;
+    height: 0;
   }
 }
