@@ -4,6 +4,8 @@
 
 ## [LIVE WEBSITE](https://travelmates.netlify.app/)
 
+## [MOCK](https://www.figma.com/file/Y5yC4bhX5HEw1VWEgNeM81/Untitled?type=design&node-id=0%3A1&mode=design&t=fDnfOAztVUpGNnAZ-1)
+
 ## Getting Started
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
