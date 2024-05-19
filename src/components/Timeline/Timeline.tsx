@@ -3,6 +3,10 @@ import { TimelineItem } from "@/entities/timelineItem/timelineItem";
 import TimelineItemComponent from "./TimelineItem/TimelineItem";
 
 async function getTimelineItems(): Promise<TimelineItem[]> {
+  console.log(
+    "fffffffffffffffffffffffffffffffffffffffffff process.env.BASE_URL:",
+    process.env.BASE_URL,
+  );
   const res = await fetch(process.env.BASE_URL + "/api/timeline-items");
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
