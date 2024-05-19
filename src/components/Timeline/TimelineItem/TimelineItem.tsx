@@ -32,6 +32,7 @@ export default function TimelineItem({
       gsap.to(`.${styles.timelineItem__description}`, {
         height: expanded ? "auto" : 0,
         duration: 0.2,
+        ease: "power4.inOut",
       });
     },
     {

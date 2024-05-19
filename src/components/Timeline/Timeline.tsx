@@ -4,7 +4,9 @@ import TimelineItemComponent from "./TimelineItem/TimelineItem";
 import { useEffect, useState } from "react";
 
 async function getTimelineItems(): Promise<TimelineItem[]> {
-  const res = await fetch(process.env.BASE_URL + "/api/timeline-items");
+  const res = await fetch(
+    process.env.NEXT_PUBLIC_BASE_URL + "/api/timeline-items",
+  );
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
 
@@ -17,7 +19,7 @@ async function getTimelineItems(): Promise<TimelineItem[]> {
   return data;
 }
 
-export default async function Timeline() {
+export default function Timeline() {
   const [timelineItems, setTimelineItems] = useState<TimelineItem[]>([]);
 
   useEffect(() => {
