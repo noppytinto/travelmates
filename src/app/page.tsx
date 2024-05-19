@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 import Timeline from "@/components/Timeline/Timeline";
 

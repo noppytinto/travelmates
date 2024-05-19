@@ -1,12 +1,9 @@
 import styles from "./Timeline.module.scss";
 import { TimelineItem } from "@/entities/timelineItem/timelineItem";
 import TimelineItemComponent from "./TimelineItem/TimelineItem";
+import { useEffect, useState } from "react";
 
 async function getTimelineItems(): Promise<TimelineItem[]> {
-  console.log(
-    "fffffffffffffffffffffffffffffffffffffffffff process.env.BASE_URL:",
-    process.env.BASE_URL,
-  );
   const res = await fetch(process.env.BASE_URL + "/api/timeline-items");
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
@@ -21,7 +18,11 @@ async function getTimelineItems(): Promise<TimelineItem[]> {
 }
 
 export default async function Timeline() {
-  const timelineItems = await getTimelineItems();
+  const [timelineItems, setTimelineItems] = useState<TimelineItem[]>([]);
+
+  useEffect(() => {
+    getTimelineItems().then(setTimelineItems);
+  }, []);
 
   return (
     <div className={styles["timeline"]}>
