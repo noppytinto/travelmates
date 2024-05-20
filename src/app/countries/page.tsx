@@ -25,7 +25,9 @@ function CountriesPage() {
    ************************************************/
   useEffect(() => {
     (async () => {
-      const response = await fetch("/api/countries");
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_LOCAL_BASE_URL + "/api/countries",
+      );
       const result = await response.json();
       console.log(
         "fffffffffffffffffffffffffffffffffffffffffff result:",
@@ -39,7 +41,9 @@ function CountriesPage() {
   useEffect(() => {
     if (!query) return;
     (async () => {
-      const response = await fetch("/api/country/?q=" + query);
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_LOCAL_BASE_URL + "/api/country/?q=" + query,
+      );
       const result = await response.json();
       const parsed = result.data.map(parseCountry) as Country[];
       setCountries(parsed);
