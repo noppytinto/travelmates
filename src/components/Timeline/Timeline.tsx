@@ -1,7 +1,7 @@
 import styles from "./Timeline.module.scss";
 import { TimelineItem } from "@/entities/timelineItem/timelineItem";
 import TimelineItemComponent from "./TimelineItem/TimelineItem";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "@/components/ui/Button/Button";
 import { faAdd } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,16 +16,19 @@ export default function Timeline() {
   return (
     <div className={styles.timeline}>
       <h1>Timeline</h1>
-      <ul>
-        {timelineItems.map((item, index) => (
-          <li key={index}>
-            <TimelineItemComponent
-              title={item.title}
-              description={item.description}
-            />
-          </li>
-        ))}
-      </ul>
+
+      <div className="relative">
+        <ul>
+          {timelineItems.map((item, index) => (
+            <li key={index}>
+              <TimelineItemComponent
+                title={item.title}
+                description={item.description}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
 
       <Button className={styles.addButton}>
         <FontAwesomeIcon icon={faAdd} size={"lg"} />

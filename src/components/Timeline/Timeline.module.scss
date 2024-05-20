@@ -1,10 +1,23 @@
 .timeline {
   height: 100%;
   position: relative;
+
+  &::before {
+    $width: 2px;
+    $height: 100%;
+    $color: #abdbff;
+
+    content: "";
+    border-left: $width dashed $color;
+    position: absolute;
+    top: 2em;
+    left: 12px;
+    bottom: 0;
+  }
 }
 
 .addButton {
   position: absolute;
-  right: 20px;
-  bottom: 20px;
+  right: 15px;
+  bottom: 15px;
 }

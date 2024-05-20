@@ -1,23 +1,10 @@
 @use "mixins" as mix;
 
-.verticalBar {
-  $width: 3px;
-  $height: 100%;
-  $color: #abdbff;
-
-  border-left: $width dashed $color;
-  position: absolute;
-  top: 0;
-  left: 12px;
-  bottom: 0;
-}
-
 .timelineItem {
   $padding-y: 30px;
 
   position: relative;
   padding: $padding-y 0;
-  margin-bottom: 5px;
 
   &:hover {
     cursor: pointer;
@@ -54,6 +41,5 @@
     overflow: hidden;
     padding: 0;
     height: 0;
-    isolation: isolate;
   }
 }

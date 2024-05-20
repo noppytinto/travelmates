@@ -50,8 +50,6 @@ export default function TimelineItem({
       onClick={expandDescription}
       ref={timelineItemEl}
     >
-      <div className={styles.verticalBar}></div>
-
       {/***********************+ HEADER **************************/}
       <div className={styles.timelineItem__header}>
         <div className={styles.timelineItem__icon}>
