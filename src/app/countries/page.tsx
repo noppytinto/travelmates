@@ -25,29 +25,29 @@ function CountriesPage() {
    ************************************************/
   useEffect(() => {
     (async () => {
-      const response = await fetch(
-        process.env.NEXT_PUBLIC_LOCAL_BASE_URL + "/api/countries",
-      );
-      const result = await response.json();
-      console.log(
-        "fffffffffffffffffffffffffffffffffffffffffff result:",
-        result,
-      );
-      const parsed = result.data.map(parseCountry) as Country[];
-      setCountries(parsed);
+      // const response = await fetch(
+      //   process.env.NEXT_PUBLIC_LOCAL_BASE_URL + "/api/countries",
+      // );
+      // const result = await response.json();
+      // console.log(
+      //   "fffffffffffffffffffffffffffffffffffffffffff result:",
+      //   result,
+      // );
+      // const parsed = result.data.map(parseCountry) as Country[];
+      // setCountries(parsed);
     })();
   }, []);
 
   useEffect(() => {
     if (!query) return;
-    (async () => {
-      const response = await fetch(
-        process.env.NEXT_PUBLIC_LOCAL_BASE_URL + "/api/country/?q=" + query,
-      );
-      const result = await response.json();
-      const parsed = result.data.map(parseCountry) as Country[];
-      setCountries(parsed);
-    })();
+    // (async () => {
+    //   const response = await fetch(
+    //     process.env.NEXT_PUBLIC_LOCAL_BASE_URL + "/api/country/?q=" + query,
+    //   );
+    //   const result = await response.json();
+    //   const parsed = result.data.map(parseCountry) as Country[];
+    //   setCountries(parsed);
+    // })();
   }, [query]);
 
   /************************************************
