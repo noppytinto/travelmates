@@ -41,12 +41,17 @@ export default function TimelineItem({
     },
   );
 
+  // =============================================
+  // JSX
+  // =============================================
   return (
     <div
       className={styles.timelineItem}
       onClick={expandDescription}
       ref={timelineItemEl}
     >
+      <div className={styles.verticalBar}></div>
+
       {/***********************+ HEADER **************************/}
       <div className={styles.timelineItem__header}>
         <div className={styles.timelineItem__icon}>
@@ -59,7 +64,10 @@ export default function TimelineItem({
             }}
           />
         </div>
+
         <h1 className={styles.timelineItem__title}>{title}</h1>
+
+        <div className="grow"></div>
 
         {description && (
           <FontAwesomeIcon

@@ -1,45 +1,45 @@
-@mixin flex-row-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@use "mixins" as mix;
 
-@mixin flex-row-space-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.verticalBar {
+  $width: 3px;
+  $height: 100%;
+  $color: #abdbff;
+
+  border-left: $width dashed $color;
+  position: absolute;
+  top: 0;
+  left: 12px;
+  bottom: 0;
 }
 
 .timelineItem {
   $padding-y: 30px;
 
-  border-left: 3px solid #abdbff;
-  padding: $padding-y 10px $padding-y 30px;
+  position: relative;
+  padding: $padding-y 0;
+  margin-bottom: 3px;
 
   &:hover {
     cursor: pointer;
-
-    // box-shadow: 2px 2px 12px -2px rgb(0 0 0 / 50%);
   }
 
   &__header {
     position: relative;
 
-    @include flex-row-space-between;
+    @include mix.flex-row-space-between;
+
+    gap: 0.5em;
+    margin-bottom: 10px;
   }
 
   &__icon {
-    $size: 35px;
+    $size: 28px;
 
     height: $size;
     width: $size;
-    position: absolute;
-    top: 50%;
-    left: -20px;
 
-    @include flex-row-center;
+    @include mix.flex-row-center;
 
-    transform: translateY(-50%) translateX(-80%);
     background-color: #3aa4ff;
     border-radius: 50%;
     color: #fff;
@@ -51,9 +51,9 @@
   }
 
   &__description {
-    margin-top: 10px;
     overflow: hidden;
     padding: 0;
     height: 0;
+    isolation: isolate;
   }
 }

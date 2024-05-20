@@ -1,3 +1,10 @@
 .timeline {
-  margin-left: 10px;
+  height: 100%;
+  position: relative;
+}
+
+.addButton {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
 }

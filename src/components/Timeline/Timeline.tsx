@@ -2,6 +2,37 @@ import styles from "./Timeline.module.scss";
 import { TimelineItem } from "@/entities/timelineItem/timelineItem";
 import TimelineItemComponent from "./TimelineItem/TimelineItem";
 import { useEffect, useState } from "react";
+import Button from "@/components/ui/Button/Button";
+import { faAdd } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+export default function Timeline() {
+  const [timelineItems, setTimelineItems] = useState<TimelineItem[]>([]);
+
+  useEffect(() => {
+    getTimelineItems().then(setTimelineItems);
+  }, []);
+
+  return (
+    <div className={styles.timeline}>
+      <h1>Timeline</h1>
+      <ul>
+        {timelineItems.map((item, index) => (
+          <li key={index}>
+            <TimelineItemComponent
+              title={item.title}
+              description={item.description}
+            />
+          </li>
+        ))}
+      </ul>
+
+      <Button className={styles.addButton}>
+        <FontAwesomeIcon icon={faAdd} size={"lg"} />
+      </Button>
+    </div>
+  );
+}
 
 async function getTimelineItems(): Promise<TimelineItem[]> {
   const res = await fetch(
@@ -17,28 +48,4 @@ async function getTimelineItems(): Promise<TimelineItem[]> {
 
   const { data } = await res.json();
   return data;
-}
-
-export default function Timeline() {
-  const [timelineItems, setTimelineItems] = useState<TimelineItem[]>([]);
-
-  useEffect(() => {
-    getTimelineItems().then(setTimelineItems);
-  }, []);
-
-  return (
-    <div className={styles["timeline"]}>
-      <h1>Timeline</h1>
-      <ul>
-        {timelineItems.map((item, index) => (
-          <li key={index}>
-            <TimelineItemComponent
-              title={item.title}
-              description={item.description}
-            />
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
 }

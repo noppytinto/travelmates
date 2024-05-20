@@ -4,7 +4,7 @@ import Timeline from "@/components/Timeline/Timeline";
 
 export default function Home() {
   return (
-    <main>
+    <main className="h-full">
       <Timeline />
     </main>
   );

@@ -35,6 +35,7 @@ const timelineItems: APITimelineItem[] = [
   },
 ];
 
+// TODO: get real items data from db
 export async function GET() {
   const data: TimelineItem[] = timelineItems.map(parse);
 
