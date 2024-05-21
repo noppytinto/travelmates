@@ -18,9 +18,6 @@ export const metadata: Metadata = {
   },
 };
 
-// full-screen mode safari
-// <meta name="apple-mobile-web-app-capable" content="yes">
-
 export default function RootLayout({
   children,
 }: Readonly<{
