@@ -1,5 +1,4 @@
 .timeline {
-  height: 100dvh;
   position: relative;
   overflow: auto;
 
@@ -24,8 +23,8 @@
 }
 
 .addButton {
-  position: sticky;
-  left: 100vw;
-  bottom: 7em;
+  position: fixed;
+  top: 90dvh;
+  right: 1em;
   margin-right: 1em;
 }
