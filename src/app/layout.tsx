@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.scss";
 import styles from "./layout.module.scss";
@@ -12,7 +12,14 @@ const font = Poppins({ subsets: ["latin"], weight: ["400", "600"] });
 export const metadata: Metadata = {
   title: "Travelmates",
   description: "Travelmates - your companion travel app",
+  appleWebApp: {
+    title: "Travelmates",
+    capable: true,
+  },
 };
+
+// full-screen mode safari
+// <meta name="apple-mobile-web-app-capable" content="yes">
 
 export default function RootLayout({
   children,
