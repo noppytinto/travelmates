@@ -1,10 +1,10 @@
-import styles from "./Timeline.module.scss";
 import { TimelineItem } from "@/entities/timelineItem/timelineItem";
 import TimelineItemComponent from "./TimelineItem/TimelineItem";
 import React, { useEffect, useState } from "react";
 import Button from "@/components/ui/Button/Button";
 import { faAdd } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from "./Timeline.module.scss";
 
 export default function Timeline() {
   const [timelineItems, setTimelineItems] = useState<TimelineItem[]>([]);
@@ -15,7 +15,9 @@ export default function Timeline() {
 
   return (
     <div className={styles.timeline}>
-      <h1>Timeline</h1>
+      <div className={styles.timeline__header}>
+        <h1>Timeline</h1>
+      </div>
 
       <div className="relative">
         <ul>

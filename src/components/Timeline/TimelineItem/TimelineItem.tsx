@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, PropsWithChildren, useEffect, useRef } from "react";
+import React, { useState, PropsWithChildren, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "@/components/ui/Card/Card";
 import styles from "./TimelineItem.module.scss";

@@ -1,20 +1,20 @@
-.countriesGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
-
-  &ListItem {
-    position: relative;
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-    overflow: hidden;
-    height: 180px;
-
-    &:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
-    }
-  }
-}
+//.countriesGrid {
+//  display: grid;
+//  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+//  gap: 2rem;
+//  padding: 1rem;
+//
+//  &ListItem {
+//    position: relative;
+//    border-radius: 1rem;
+//    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+//    transition: transform 0.2s;
+//    overflow: hidden;
+//    height: 180px;
+//
+//    &:hover {
+//      transform: scale(1.05);
+//      box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+//    }
+//  }
+//}
