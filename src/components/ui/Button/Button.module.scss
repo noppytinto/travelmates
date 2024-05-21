@@ -11,7 +11,7 @@
   border-radius: 0.8em;
   background-color: vars.$color-primary;
   color: vars.$color-primary-dark;
-  box-shadow: 0.1em 0.1em 0.2em 0.1em rgba(67 44 23 / 15%);
+  box-shadow: 0 0.15em 0.2em 0.1em rgba(67 44 23 / 15%);
   transition: all 0.1s;
 
   @include flex-center;
