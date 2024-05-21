@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     title: "Travelmates",
     capable: true,
+    statusBarStyle: "black-translucent",
   },
 };
 
