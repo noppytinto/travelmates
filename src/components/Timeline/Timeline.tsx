@@ -1,10 +1,11 @@
 import { TimelineItem } from "@/entities/timelineItem/timelineItem";
 import TimelineItemComponent from "./TimelineItem/TimelineItem";
 import React, { useEffect, useState } from "react";
-import Button from "@/components/ui/Button/Button";
+// import Button from "@/components/ui/Button/Button";
 import { faAdd } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Timeline.module.scss";
+import { Button } from "@nextui-org/react";
 
 export default function Timeline() {
   const [timelineItems, setTimelineItems] = useState<TimelineItem[]>([]);
