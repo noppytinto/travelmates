@@ -23,55 +23,9 @@ const timelineItems: APITimelineItem[] = [
     date: "2022-01-01",
   },
   {
-    title: "Visit the Eiffel Tower",
-    time: "14:00",
-    date: "2022-01-01",
-  },
-  {
-    title: "Dinner at a fancy restaurant",
-    description: "Try the escargot!",
-    time: "20:00",
-    date: "2022-01-01",
-  },
-  {
     title: "Flight to Berlin",
     time: "10:00",
     date: "2022-01-02",
-  },
-  {
-    title: "Arrive in Berlin",
-    time: "12:00",
-    date: "2022-01-02",
-  },
-  {
-    title: "Visit the Brandenburg Gate",
-    time: "14:00",
-    date: "2022-01-02",
-  },
-  {
-    title: "Dinner at a local pub",
-    time: "20:00",
-    date: "2022-01-02",
-  },
-  {
-    title: "Flight to Rome",
-    time: "10:00",
-    date: "2022-01-03",
-  },
-  {
-    title: "Arrive in Rome",
-    time: "12:00",
-    date: "2022-01-03",
-  },
-  {
-    title: "Visit the Colosseum",
-    time: "14:00",
-    date: "2022-01-03",
-  },
-  {
-    title: "Dinner at a pizzeria",
-    time: "20:00",
-    date: "2022-01-03",
   },
   {
     title: "Flight back home",
