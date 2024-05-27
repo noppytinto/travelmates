@@ -151,6 +151,10 @@ export default function Timeline({ className }: Props) {
                 defaultValue={new Time(8, 0)}
                 id="form-time"
                 isRequired
+                onFocus={() => {
+                  // scroll down on mobile, in case the input is hidden by the keyboard
+                  window.scrollTo(0, document.body.scrollHeight);
+                }}
               />
             </form>
           </ModalBody>
