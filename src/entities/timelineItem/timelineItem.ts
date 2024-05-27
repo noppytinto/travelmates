@@ -20,7 +20,7 @@ export function parse(apiTimelineItem: APITimelineItem): TimelineItem {
   };
 }
 
-function parseStringTimeToDateTime(time: string): Date {
+export function parseStringTimeToDateTime(time: string): Date {
   const [hours, minutes] = time.split(":").map((str) => parseInt(str));
   return new Date(0, 0, 0, hours, minutes);
 }

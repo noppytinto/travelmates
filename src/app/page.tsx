@@ -6,7 +6,7 @@ import styles from "./App.module.scss";
 
 export default function Home() {
   return (
-    <main className="m-3">
+    <main className="p-3">
       <Timeline />
     </main>
   );

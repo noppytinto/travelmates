@@ -1,6 +1,5 @@
 .timeline {
   position: relative;
-  overflow: auto;
 
   &::before {
     $width: 2px;
@@ -27,4 +26,5 @@
   top: 90dvh;
   right: 1em;
   margin-right: 1em;
+  padding: 2em;
 }

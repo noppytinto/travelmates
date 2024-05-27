@@ -2,14 +2,15 @@
 
 import React, { useState, PropsWithChildren, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Card from "@/components/ui/Card/Card";
 import styles from "./TimelineItem.module.scss";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { Card } from "@nextui-org/react";
+import { WithClassName } from "@/types/style";
 
-type Props = {
+type Props = WithClassName & {
   title: string;
   description?: string;
 };
@@ -17,6 +18,7 @@ type Props = {
 export default function TimelineItem({
   title,
   description,
+  className,
 }: PropsWithChildren<Props>) {
   const timelineItemEl = useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = useState(false);
@@ -46,7 +48,7 @@ export default function TimelineItem({
   // =============================================
   return (
     <div
-      className={styles.timelineItem}
+      className={`${styles.timelineItem} ${className}`}
       onClick={expandDescription}
       ref={timelineItemEl}
     >
