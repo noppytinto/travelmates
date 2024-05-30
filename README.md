@@ -2,6 +2,16 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7e6bae88-4f8f-4d6c-bf83-f4eb9bd6efc3/deploy-status)](https://app.netlify.com/sites/travelmates/deploys)
 
+Travelmates is a comprehensive travel companion app designed to enhance your travel experience with a suite of essential features.
+
+Key functionalities to include:
+
+- Timeline: Organize and view your travel itinerary in a clear, chronological format.
+- Checklist: Keep track of your travel essentials with customizable checklists.
+- POI List: Discover and save points of interest for your destinations.
+- Emergency Numbers: Access important emergency contacts relevant to your current country.
+- My Transportations: Consult and manage your transportation arrangements effortlessly.
+
 ## [LIVE WEBSITE](https://travelmates.netlify.app/)
 
 ## [MOCK](https://www.figma.com/file/Y5yC4bhX5HEw1VWEgNeM81/Untitled?type=design&node-id=0%3A1&mode=design&t=fDnfOAztVUpGNnAZ-1)
