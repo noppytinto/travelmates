@@ -9,6 +9,7 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { Card } from "@nextui-org/react";
 import { WithClassName } from "@/types/style";
+import { motion } from "framer-motion";
 
 type Props = WithClassName & {
   title: string;
@@ -64,22 +65,25 @@ export default function TimelineItem({
             }}
           />
         </div>
-
-        <h1 className={styles.timelineItem__title}>{title}</h1>
-
-        <div className="grow"></div>
-
-        {description && (
-          <FontAwesomeIcon
-            icon={faFileLines}
-            size={"lg"}
-            style={{
-              color: "#d1d1d1",
-              display: "block",
-            }}
-            fixedWidth
-          />
-        )}
+        <motion.div
+          whileTap={{
+            scale: 1.005,
+          }}
+          className="flex w-full items-center justify-between"
+        >
+          <h1 className={styles.timelineItem__title}>{title}</h1>
+          {description && (
+            <FontAwesomeIcon
+              icon={faFileLines}
+              size="lg"
+              style={{
+                color: "#d1d1d1",
+                display: "block",
+              }}
+              fixedWidth
+            />
+          )}
+        </motion.div>
       </div>
 
       {/***********************+ DESCRIPTION *********************/}

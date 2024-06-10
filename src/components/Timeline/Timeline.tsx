@@ -16,43 +16,35 @@ import {
   Button,
   useDisclosure,
   Input,
-  DateInput,
   TimeInput,
   DatePicker,
 } from "@nextui-org/react";
-import {
-  parseDate,
-  parseTime,
-  Time,
-  now,
-  getLocalTimeZone,
-} from "@internationalized/date";
+import { parseDate } from "@internationalized/date";
 import { WithClassName } from "@/types/style";
+import { Textarea } from "@nextui-org/input";
+import { scrollToBottom } from "@/utils/scroll";
+import { motion } from "framer-motion";
+import { APP_DEFAULT_INITIAL_TIME, getTodayDateString } from "@/utils/time";
 
-/**
- * get ISO 8601 formatted date string for today
- *
- * @returns {string} ISO 8601 formatted date string for today
- */
-const getTodayDate = () => {
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = String(today.getMonth() + 1).padStart(2, "0");
-  const day = String(today.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
-};
-
-/**
- * get current time in HH:MM format
- *
- * @returns {string} current time in HH:MM format
- */
-const getCurrentTime = () => {
-  const today = new Date();
-  const hours = String(today.getHours()).padStart(2, "0");
-  const minutes = String(today.getMinutes()).padStart(2, "0");
-  return `${hours}:${minutes}`;
-};
+// const containerVariants: Variants = {
+//   hidden: { opacity: 0 },
+//   show: {
+//     opacity: 1,
+//     transition: {
+//       staggerChildren: 1,
+//     },
+//   },
+// };
+//
+// const itemVariants: Variants = {
+//   hidden: { opacity: 0 },
+//   show: {
+//     opacity: 1,
+//     transition: {
+//       delay: 1,
+//     },
+//   },
+// };
 
 type Props = WithClassName & {};
 
@@ -68,17 +60,17 @@ export default function Timeline({ className }: Props) {
     event.preventDefault();
     const formElement = event.currentTarget as HTMLFormElement;
 
-    const titleInput = formElement.querySelector(
-      "#form-title",
+    const titleInput = formElement.elements.namedItem(
+      "title",
     ) as HTMLInputElement;
-    const descriptionInput = formElement.querySelector(
-      "#form-description",
+    const descriptionInput = formElement.elements.namedItem(
+      "description",
     ) as HTMLInputElement;
-    const timeInput = formElement.querySelector(
-      "#form-time input",
+    const timeInput = formElement.elements.namedItem(
+      "time",
     ) as HTMLInputElement;
-    const dateInput = formElement.querySelector(
-      "#form-date input",
+    const dateInput = formElement.elements.namedItem(
+      "date",
     ) as HTMLInputElement;
 
     const newItem: TimelineItem = {
@@ -89,6 +81,8 @@ export default function Timeline({ className }: Props) {
     };
 
     setTimelineItems((prevItems) => [...prevItems, newItem]);
+
+    scrollToBottom();
     onClose();
   }
 
@@ -102,16 +96,27 @@ export default function Timeline({ className }: Props) {
       </div>
 
       <div className="relative">
-        <ul>
+        <motion.ul>
           {timelineItems.map((item, index) => (
-            <li key={index}>
+            <motion.li
+              key={index}
+              initial={{
+                opacity: 0,
+              }}
+              animate={{
+                opacity: 1,
+              }}
+              transition={{
+                delay: index * 0.03,
+              }}
+            >
               <TimelineItemComponent
                 title={item.title}
                 description={item.description}
               />
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
       </div>
 
       <Button isIconOnly className={styles.addButton} onClick={onOpen}>
@@ -121,9 +126,11 @@ export default function Timeline({ className }: Props) {
       <Modal
         isOpen={isOpen}
         onOpenChange={onOpenChange}
-        backdrop="blur"
         className="m-4"
-        placement="center"
+        placement="bottom"
+        isDismissable={false}
+        closeButton={false}
+        shouldBlockScroll={false}
       >
         <ModalContent>
           <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
@@ -133,29 +140,20 @@ export default function Timeline({ className }: Props) {
               className="flex flex-col gap-4"
               id="form-add-item"
             >
-              <Input type="text" label="Title" id="form-title" isRequired />
-              <Input
-                type="text"
-                label="Description"
-                id="form-description"
-                isRequired
-              />
+              <Input type="text" label="Title" name="title" isRequired />
               <DatePicker
                 label={"Date"}
-                id="form-date"
+                name="date"
                 isRequired
-                defaultValue={parseDate(getTodayDate())}
+                defaultValue={parseDate(getTodayDateString())}
               />
               <TimeInput
                 label="Time"
-                defaultValue={new Time(8, 0)}
-                id="form-time"
+                defaultValue={APP_DEFAULT_INITIAL_TIME}
+                name="time"
                 isRequired
-                onFocus={() => {
-                  // scroll down on mobile, in case the input is hidden by the keyboard
-                  window.scrollTo(0, document.body.scrollHeight);
-                }}
               />
+              <Textarea label="Description" name="description" />
             </form>
           </ModalBody>
           <ModalFooter>
