@@ -14,9 +14,7 @@ Key functionalities to include:
 
 ## [LIVE WEBSITE](https://travelmates.netlify.app/)
 
-## [MOCK](https://www.figma.com/file/Y5yC4bhX5HEw1VWEgNeM81/Untitled?type=design&node-id=0%3A1&mode=design&t=fDnfOAztVUpGNnAZ-1)
-
-## [MOCK 2](https://www.figma.com/file/6U3SsGnOHCOmpuiltflO9j/travelmates--design?type=design&node-id=0%3A1&mode=design&t=VEEttGtaqsNPEHXZ-1)
+## [MOCK](https://www.figma.com/design/6U3SsGnOHCOmpuiltflO9j/travelmates--design?node-id=7-385&t=vV68jI6Ve2EqRSyu-1)
 
 ## Getting Started
 
